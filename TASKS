@@ -1,0 +1,3 @@
+jekyll serve --watch
+coffee --watch -c assets/js/app.coffee
+sass --watch assets/css/all.sass:assets/css/all.css
