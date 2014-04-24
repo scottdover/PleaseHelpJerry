@@ -14,8 +14,16 @@
     return this.init();
   };
 
+  App.prototype.actions = function() {};
+
   App.prototype.init = function() {
-    return c.log('PleaseHelpJerry is up and running');
+    c.log('PleaseHelpJerry is up and running');
+    $('.modal').magnificPopup({
+      type: 'ajax',
+      mainClass: 'volunteer-op-wrap'
+    });
+    this.actions();
+    return this;
   };
 
   window.app = new App();
