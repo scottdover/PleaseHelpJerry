@@ -14,7 +14,36 @@
     return this.init();
   };
 
-  App.prototype.actions = function() {};
+  App.prototype.actions = function() {
+    $('.yt-embed').unbind('click').click(function(e) {
+      var div;
+      e.preventDefault();
+      div = $(this).attr('data-rel');
+      return $.magnificPopup.open({
+        mainClass: 'video-wrap',
+        items: {
+          src: $('.' + div),
+          type: 'inline'
+        }
+      });
+    });
+    $('.top-picker a').unbind('click').click(function(e) {
+      var cat;
+      e.preventDefault();
+      cat = $(this).attr('data-cat');
+      $('.top-picker a').removeClass('active');
+      $(this).addClass('active');
+      $('.posts').fadeOut('medium', function() {
+        if (cat === 'all') {
+          $('.posts li').show();
+        } else {
+          $('.posts li').hide();
+          $('.posts li[data-cat="' + cat + '"]').show();
+        }
+        $('.posts').fadeIn('medium');
+      });
+    });
+  };
 
   App.prototype.init = function() {
     c.log('PleaseHelpJerry is up and running');
@@ -22,6 +51,16 @@
       type: 'ajax',
       mainClass: 'volunteer-op-wrap'
     });
+    $('.content-wrapper').css('margin-top', $(window).height() + 'px');
+    if (window.location.hash.search('thanks') !== -1) {
+      $.magnificPopup.open({
+        mainClass: 'volunteer-op-wrap',
+        items: {
+          src: $('<div><h2>Thank you</h2><p>Thank you for getting in touch. We\'ll contact you as soon as possible</p></div>'),
+          type: 'inline'
+        }
+      });
+    }
     this.actions();
     return this;
   };

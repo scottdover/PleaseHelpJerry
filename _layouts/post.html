@@ -3,4 +3,35 @@
   <div class="post">
     {{ content }}
   </div><!-- /post -->
+  {% if page.categories contains 'media-ministry' %}
+    <div class="contact-box">
+      For more information about this opportunity, contact <b>April Meehan</b> at
+      <b>336.252.3674</b> or <a href="mailto:ameehan@calvarytriad.com">ameehan@calvarytriad.com</a>.
+    </div>
+  {% endif %}
+  {% if page.categories contains 'worship-ministry' %}
+    <div class="contact-box">
+      For more information about this opportunity, contact <b>Cheri Crabtree</b> at
+      <b>336.252.3668</b> or <a href="mailto:ccrabtree@calvarytriad.com">ccrabtree@calvarytriad.com</a>.
+    </div>
+  {% endif %}
+  {% if page.categories contains 'fluid-student-ministries-(youth)' %}
+    <div class="contact-box">
+      For more information about this opportunity, contact <b>Holly Davis</b> at
+      <b>336.252.3876</b> or <a href="mailto:hdavis@calvarytriad.com">hdavis@calvarytriad.com</a>.
+    </div>
+  {% endif %}
+  {% if page.categories contains 'hospitality-ministries' %}
+    <div class="contact-box">
+      For more information about this opportunity, contact <b>Kerry Strandberg</b> at
+      <b>336.252.3877</b> or <a href="mailto:kstrandberg@calvarytriad.com">kstrandberg@calvarytriad.com</a>.
+    </div>
+  {% endif %}
+  {% if page.categories contains 'kids-zone-ministries-(children)' %}
+    <div class="contact-box">
+      For more information about this opportunity, contact <b>Danielle Jones</b> at
+      <b>336.252.3672</b> or <a href="mailto:djones@calvarytriad.com">djones@calvarytriad.com</a>.
+    </div>
+  {% endif %}
+
 </div><!-- /post-wrapper -->
