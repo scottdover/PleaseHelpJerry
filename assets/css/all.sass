@@ -88,7 +88,7 @@ p, a
     z-index: 3
 
 .section
-  border-top: 1px solid #ddd
+  border-top: 1px solid lighten($med-gray, 10%)
   &.odd
     background: #fafafa
   >.content
@@ -120,7 +120,7 @@ p
     em
       display: none
     &.not-ready
-      border: 2px dashed #eee
+      border: 2px dashed lighten($med-gray, 10%)
       .hidden
         display: none
       em
@@ -161,9 +161,11 @@ p
 
 .vol-pos-wrap
   .top-picker
+    select
+      display: none
     margin-top: 25px
     .line
-      border-top: 1px solid #ddd
+      border-top: 1px solid lighten($med-gray, 10%)
       clear: both
     a
       font-size: 16px
@@ -181,15 +183,15 @@ p
         width: 12px
         height: 12px
         background: white
-        border: 1px solid #ddd
+        border: 1px solid $med-gray
         border-radius: 12px
         -webkit-border-radius: 12px
         -moz-border-radius: 12px
         margin: 0 auto
         @include transition(all 0.5s $ease-out-quart)
-      color: #bbb
+      color: darken($gray, 5%)
       @include transition(all 0.5s $ease-out-quart)
-      &.active
+      &.active, &:hover
         @include transition(all 0.5s $ease-out-quart)
         color: $red
         i
@@ -212,18 +214,19 @@ p
   li
     font-size: 19px
     padding: 6px
-    border-top: 1px solid #eee
+    border-top: 1px solid #e6e6e6
+    cursor: pointer
   .modal
     float: right
     font-size: 17px
-    border: 1px solid #ddd
-    color: #ccc
+    border: 1px solid $gray
+    color: $gray
     padding: 1px 5px
     border-radius: 5px
     -webkit-border-radius: 5px
     -moz-border-radius: 5px
     @include transition(all 0.5s $ease-out-quart)
-    &:hover
+    &:hover, &.active
       @include transition(all 0.5s $ease-out-quart)
       color: $red
       border-color: $red
@@ -231,7 +234,7 @@ p
 form
   input[type='text'], textarea
     width: 100%
-    border: 2px solid #ddd
+    border: 2px solid lighten($med-gray, 10%)
     padding: 5px
   input[type='text'], textarea, input[type='submit']
     font-size: 16px
@@ -244,9 +247,10 @@ form
   .form-controls
     text-align: right
     input
+      cursor: pointer
       background: none
-      border: 1px solid #ddd
-      color: #ccc
+      border: 1px solid $gray
+      color: $gray
       padding: 5px 10px
       border-radius: 5px
       -webkit-border-radius: 5px
@@ -265,3 +269,66 @@ form
   .right
     width: 554px
     margin-left: 276px
+
+.bottom-arrow
+  a
+    color: white
+
+@media screen and (max-width: 480px)
+  .bottom-arrow
+    display: none
+  .page
+    position: relative
+    height: 270px
+  h2
+    line-height: 1.1
+  .logo
+    padding-top: 38px
+    position: relative
+    top: auto
+    left: auto
+    margin: 0 auto
+    width: 280px
+    height: auto
+    font-size: 40px
+    .line-1
+      span
+        padding-left: 29px
+    .line-2
+      font-size: 100px
+    .line-3
+      font-size: 80px
+      margin-top: -10px
+      span
+        padding-left: 20px
+  .video-box-wrapper
+    margin-left: 0
+    margin-right: 0
+    margin-top: 20px
+  .video-box
+    width: 100%
+  .vol-pos-wrap .top-picker
+    select
+      display: block
+      width: 100%
+    a
+      visibility: hidden
+      height: 1px
+    .line
+      display: none
+  .split-pane
+    .left, .right
+      width: 100%
+      float: none
+      padding-right: 0
+      margin-left: 0
+    .left
+      img
+        display: none
+      padding: 10px
+      background: #ecf0f1
+      border: 1px solid lighten($med-gray, 10%)
+      margin-top: 10px
+      margin-bottom: 15px
+
+

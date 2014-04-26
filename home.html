@@ -16,8 +16,10 @@ title: PleaseHelpJerry
     </div>
   </div><!-- /logo -->
   <div class="bottom-arrow">
-    <!-- <i>Scroll&hellip;</i> -->
-    <span></span>  
+    <a href="#" class="scroll">
+      <i>Scroll&hellip;</i>
+      <span></span>  
+    </a>
   </div><!-- /bottom-arrow -->
 </div><!-- /page -->
 
@@ -31,7 +33,7 @@ title: PleaseHelpJerry
           Meet Jerry.  He goes to Calvary Church and loves to serve there. If 
           anyone needs a hand, Jerry is the guy for the job. However, Jerry can’t 
           do it all on his own. Jerry needs help. Jerry needs <strong>YOUR</strong> help.
-          Learn a little more about Jerry below, and scroll down to see how you can
+          Learn a little more about Jerry in the videos below, and scroll down to see how you can
           help.
         </p>
         <div class="video-box-wrapper">
@@ -68,12 +70,21 @@ title: PleaseHelpJerry
 
     <div class="section odd">
       <div class="content">
-        <h2>How can I Help?</h2>
+        <h2>How can I help?</h2>
         <p>
           We're glad you asked. Below, you'll find many ways you can help Jerry and serve at Calvary Church. There is a place for everyone at Calvary.
         </p>
         <div class="vol-pos-wrap">
           <div class="top-picker">
+            <select>
+              <option value="all" selected="selected">All</option>
+              {% for category in site.categories %}  
+                <option value="{{ category | first }}">
+                  {{ category | first | replace:'-',' ' | replace:'ministries','' | replace:'ministry','' }}
+                </option>
+              {% endfor %}
+            </select>
+
             <a href="#" data-cat="all" class="active">All<span><i></i></span></a>
             {% for category in site.categories %}  
               <a href="#" data-cat="{{ category | first }}">

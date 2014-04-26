@@ -4,4 +4,4 @@ title:  "Special Needs Buddies"
 categories: kids-zone-ministries-(Children)
 ---
 
-Buddies serve as a one-on-one adult for special needs students on Sundays. They serve during the 9:00am or 10:45am services. 
+These adults serve as a one-on-one buddy, one Sunday a month during either Sunday morning service. They accompany students to their classroom enabling them to worship and be taught the love of Jesus. Time commitment ranges from 6 months to one year. Arrive 15 minutes before service. 

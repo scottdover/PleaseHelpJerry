@@ -4,4 +4,4 @@ title:  "Royal Ranger Boys Club Leaders"
 categories: kids-zone-ministries-(Children)
 ---
 
-Royal Ranger leaders serve Wednesday nights in our boys’ ministry. They teach lessons and lead activities related to community and outdoors. They mentor boys ages kindergarten through  6th grade.  Time commitment is every Wednesday night for one year. 
+Commanders and Assistant Commanders disciple, build relationships, and lead activities related to community and outdoors. They mentor boy’s age’s K-6th grade.  Time commitment ranges from 6 months to one year every Wednesday. Arrive 15 minutes before service. 

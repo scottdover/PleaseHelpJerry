@@ -4,4 +4,4 @@ title:  "Seasonal Event Volunteers"
 categories: kids-zone-ministries-(Children)
 ---
 
-Seasonal events such as VBS, the Fall Festival, Christmas Musical, and Eggstravaganza need people to help serve during those events as teachers, craft leaders, etc. 
+Fall Festival, Christmas Musical, Easter Eggstravaganza, VBS and Kids Camp. To help with various duties depending on the event such as: teachers, camp counselors, room monitors, and set-up/tear-down. 

@@ -15,6 +15,25 @@
   };
 
   App.prototype.actions = function() {
+    $('.posts li').unbind('hover').hover(function() {
+      return $(this).find('a').addClass('active');
+    }, function() {
+      return $(this).find('a').removeClass('active');
+    });
+    $('.top-picker select').unbind('change').change(function() {
+      var val;
+      val = $(this).val();
+      return $('.top-picker a[data-cat="' + val + '"]').click();
+    });
+    $('.posts li').unbind('click').click(function() {
+      return $(this).find('a').click();
+    });
+    $('.scroll').unbind('click').click(function(e) {
+      e.preventDefault();
+      return $('body,html').animate({
+        scrollTop: $(window).height()
+      }, 'medium', 'swing');
+    });
     $('.yt-embed').unbind('click').click(function(e) {
       var div;
       e.preventDefault();
@@ -51,7 +70,9 @@
       type: 'ajax',
       mainClass: 'volunteer-op-wrap'
     });
-    $('.content-wrapper').css('margin-top', $(window).height() + 'px');
+    if ($('.bottom-arrow').is(':visible')) {
+      $('.content-wrapper').css('margin-top', $(window).height() + 'px');
+    }
     if (window.location.hash.search('thanks') !== -1) {
       $.magnificPopup.open({
         mainClass: 'volunteer-op-wrap',

@@ -7,6 +7,32 @@ App= ()->
 
 App::actions= ()->
 
+  $('.posts li')
+    .unbind('hover')
+    .hover(
+      ()->
+        $(this).find('a').addClass('active')
+      ()->
+        $(this).find('a').removeClass('active')
+    )
+
+  $('.top-picker select')
+    .unbind('change')
+    .change ()->
+      val = $(this).val()
+      $('.top-picker a[data-cat="'+val+'"]').click()
+
+  $('.posts li')
+    .unbind('click')
+    .click ()->
+      $(this).find('a').click()
+
+  $('.scroll')
+    .unbind('click')
+    .click (e)->
+      e.preventDefault();
+      $('body,html').animate({scrollTop: $(window).height()}, 'medium', 'swing')
+
   $('.yt-embed')
     .unbind('click')
     .click (e)->
@@ -47,7 +73,8 @@ App::init= ()->
     mainClass: 'volunteer-op-wrap'
   )
 
-  $('.content-wrapper').css('margin-top', $(window).height() + 'px')
+  if $('.bottom-arrow').is(':visible')
+    $('.content-wrapper').css('margin-top', $(window).height() + 'px')
 
   if window.location.hash.search('thanks') != -1
     $.magnificPopup.open(
