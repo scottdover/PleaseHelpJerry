@@ -43,6 +43,11 @@ App::actions= ()->
         items:
           src: $('.' + div)
           type: 'inline'
+        callbacks:
+          open: ()->
+            window.location.hash = '#!/' + div
+          close: ()->
+            window.location.hash = '#!/'
       )
 
   $('.top-picker a')
@@ -71,6 +76,12 @@ App::init= ()->
   $('.modal').magnificPopup(
     type: 'ajax'
     mainClass: 'volunteer-op-wrap'
+    callbacks:
+      open: ()->
+        hash = this.currItem.src.split('/').pop().replace('.html','')
+        window.location.hash = '#!/' + hash
+      close: ()->
+        window.location.hash = '#!/'
   )
 
   if $('.bottom-arrow').is(':visible')
@@ -83,6 +94,11 @@ App::init= ()->
         src: $('<div><h2>Thank you</h2><p>Thank you for getting in touch. We\'ll contact you as soon as possible</p></div>')
         type: 'inline'
     )
+
+  $(window).bind 'hashchange', ()->
+    if window.location.hash != '#!/'
+      ga('send', 'pageview')
+      return
 
   @actions()
   this

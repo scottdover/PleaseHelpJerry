@@ -43,6 +43,14 @@
         items: {
           src: $('.' + div),
           type: 'inline'
+        },
+        callbacks: {
+          open: function() {
+            return window.location.hash = '#!/' + div;
+          },
+          close: function() {
+            return window.location.hash = '#!/';
+          }
         }
       });
     });
@@ -68,7 +76,17 @@
     c.log('PleaseHelpJerry is up and running');
     $('.modal').magnificPopup({
       type: 'ajax',
-      mainClass: 'volunteer-op-wrap'
+      mainClass: 'volunteer-op-wrap',
+      callbacks: {
+        open: function() {
+          var hash;
+          hash = this.currItem.src.split('/').pop().replace('.html', '');
+          return window.location.hash = '#!/' + hash;
+        },
+        close: function() {
+          return window.location.hash = '#!/';
+        }
+      }
     });
     if ($('.bottom-arrow').is(':visible')) {
       $('.content-wrapper').css('margin-top', $(window).height() + 'px');
@@ -82,6 +100,11 @@
         }
       });
     }
+    $(window).bind('hashchange', function() {
+      if (window.location.hash !== '#!/') {
+        ga('send', 'pageview');
+      }
+    });
     this.actions();
     return this;
   };

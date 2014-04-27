@@ -1,35 +1,170 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>PleaseHelpJerry</title>
-  <meta charset="utf-8" /> 
-  <style type="text/css">
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    .teaser {
-      width: 500px;
-      text-align: center;
-      margin: 40px auto;
-      font-family: Helvetica, sans-serif;
-      font-weight: 200;
-    }
+---
+layout: default
+title: PleaseHelpJerry
+---
+<div class="page-wrapper">
 
-    .teaser p {
-      border-top: 1px solid #ddd;
-      margin-top: -4px;
-      padding-top: 10px;
-      font-size: 20px;
-      color: #404044;
-      font-style: italic;
-    }
-  </style>
-</head>
-<body>
-  <div class="teaser">
-    <img src="/assets/img/please-help-jerry.jpg" alt="Please Help Jerry" />
-    <p>Coming Soon...</p>
-  </div>
-</body>'
-</html>
+<h1>PleaseHelpJerry</h1>
+<div class="page red">
+  <div class="logo">
+    <div class="line-1">
+      <span>P</span><span>l</span><span>e</span><span>a</span><span>s</span><span>e</span>
+    </div>
+    <div class="line-2">Help</div>
+    <div class="line-3">
+      <span>J</span><span>e</span><span>r</span><span>r</span><span>y</span>
+    </div>
+  </div><!-- /logo -->
+  <div class="bottom-arrow">
+    <a href="#" class="scroll">
+      <i>Scroll&hellip;</i>
+      <span></span>  
+    </a>
+  </div><!-- /bottom-arrow -->
+</div><!-- /page -->
+
+<div class="content-wrapper">
+  <div class="main-content">
+
+    <div class="section">
+      <div class="content">
+        <h2>Who's Jerry? Why does he need help?</h2>
+        <p>
+          Meet Jerry.  He goes to Calvary Church and loves to serve there. If 
+          anyone needs a hand, Jerry is the guy for the job. However, Jerry can’t 
+          do it all on his own. Jerry needs help. Jerry needs <strong>YOUR</strong> help.
+          Learn a little more about Jerry in the videos below, and scroll down to see how you can
+          help.
+        </p>
+        <div class="video-box-wrapper">
+          <div class="video-box alpha">
+            <div class="content">
+              <a href="#" class="yt-embed" data-rel="video-1">
+                <img src="//i1.ytimg.com/vi/l8IPZZtRuAQ/mqdefault.jpg" alt="Youtube Screenshot" />
+                <i class="fa fa-play-circle-o"></i>
+              </a>
+            </div><!-- /content -->
+          </div><!-- /video-box -->
+          <div class="video-box">
+            <div class="content not-ready">
+              <em>Video coming soon...</em>
+              <a href="#" class="yt-embed hidden hidden-1" data-rel="video-2">
+                <img src="/assets/img/yt-screen.jpg" alt="Youtube Screenshot" />
+                <i class="fa fa-play-circle-o"></i>
+              </a>
+            </div><!-- /content -->
+          </div><!-- /video-box -->
+          <div class="video-box omega">
+            <div class="content not-ready">
+              <em>Video coming soon...</em>
+              <a href="#" class="yt-embed hidden hidden-2" data-rel="video-3">
+                <img src="/assets/img/yt-screen.jpg" alt="Youtube Screenshot" />
+                <i class="fa fa-play-circle-o"></i>
+              </a>
+            </div><!-- /content -->
+          </div><!-- /video-box -->
+        </div><!-- /video-box-wrapper -->
+        <div class="cb"></div>
+      </div><!-- /content -->
+    </div><!-- /section -->
+
+    <div class="section odd">
+      <div class="content">
+        <h2>How can I help?</h2>
+        <p>
+          We're glad you asked. Below, you'll find many ways you can help Jerry and serve at Calvary Church. There is a place for everyone at Calvary.
+        </p>
+        <div class="vol-pos-wrap">
+          <div class="top-picker">
+            <select>
+              <option value="all" selected="selected">All</option>
+              {% for category in site.categories %}  
+                <option value="{{ category | first }}">
+                  {{ category | first | replace:'-',' ' | replace:'ministries','' | replace:'ministry','' }}
+                </option>
+              {% endfor %}
+            </select>
+
+            <a href="#" data-cat="all" class="active">All<span><i></i></span></a>
+            {% for category in site.categories %}  
+              <a href="#" data-cat="{{ category | first }}">
+                {{ category | first | replace:'-',' ' | replace:'ministries','' | replace:'ministry','' }}
+                <span><i></i></span>
+              </a>
+            {% endfor %}
+            <div class="line"></div>
+          </div><!-- /top-picker -->
+          <div class="posts-wrapper">
+          <div class="border"></div>
+          <ul class="posts">
+            {% for post in site.posts %}
+              <li data-cat="{{ post.categories | first }}">
+                <a class="modal" href="{{ post.url }}">
+                  + More
+                </a>
+                {{ post.title }}
+              </li>
+            {% endfor %}
+          </ul>
+          </div><!-- /posts-wrapper -->
+        </div><!-- /vol-pos-wrap -->
+      </div><!-- /content -->
+    </div><!-- /section -->
+
+    <div class="section">
+      <div class="content">
+        <h2>Get In Touch</h2>
+        <p>
+          Whether you're interested in volunteering or just want to say hi, get in touch
+          by one of the methods below. We look forward to hearing from you!
+        </p>
+        <div class="split-pane">
+          <div class="left">
+            <img src="http://maps.googleapis.com/maps/api/staticmap?center=1665+Pleasant+Ridge+Road+greensboro+nc&amp;zoom=13&amp;scale=false&amp;size=260x180&amp;maptype=roadmap&amp;sensor=false&amp;format=png&amp;visual_refresh=true&amp;markers=size:mid%7Ccolor:blue%7C1665+Pleasant+Ridge+Road+greensboro+nc" alt="Map" />
+            <b>Calvary Church</b>
+            <p>
+              1665 Pleasant Ridge Road<br/>
+              Greensboro, NC 27409<br/>
+              336.294.2788
+            </p>
+            <p>
+              <a href="http://calvarytriad.com" target="_blank">
+                Church Website
+                <i class="fa fa-chevron-right" style="font-size: 13px;"></i>
+              </a>
+              <br/>
+              <a href="http://calvarytriad.com/staff-listing/" target="_blank">
+                Staff Listing
+                <i class="fa fa-chevron-right" style="font-size: 13px;"></i>
+              </a>
+            </p>
+          </div><!-- /left -->
+          <div class="right">
+            <form method="post" action="//forms.brace.io/info@calvarytriad.com">
+              <input type="hidden" name="_replyto" value="info@calvarytriad.com" />
+              <input type="hidden" name="_next" value="http://pleasehelpjerry.com/#!/thanks" />
+              <ul>
+                <li><input type="text" name="name" placeholder="Your Name" /></li>
+                <li><input type="text" name="contact" placeholder="Contact Info (i.e. Phone number or Email)" /></li>
+                <li>
+                  <textarea name="message" placeholder="Your Message"></textarea>
+                </li>
+                <li class="form-controls">
+                  <input type="submit" value="Submit" />
+                </li>
+              </ul>
+            </form>
+          </div><!-- /right -->
+        </div><!-- /split-pane -->
+        <div class="cb"></div>
+      </div><!-- /content -->
+    </div><!-- /section -->
+
+  </div><!-- /main-content -->
+</div><!-- /content-wrap -->
+
+</div><!-- /page-wrapper -->
+
+<div style="display:none;">
+  <iframe class="video-1" width="760" height="515" src="//www.youtube.com/embed/l8IPZZtRuAQ" frameborder="0" allowfullscreen></iframe>
+</div>
