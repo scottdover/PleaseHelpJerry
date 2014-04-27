@@ -90,6 +90,13 @@
     });
     if ($('.bottom-arrow').is(':visible')) {
       $('.content-wrapper').css('margin-top', $(window).height() + 'px');
+      $('.page').swipe({
+        swipe: function(e, dir, dist, duration, fingerCount) {
+          if (dir === 'up') {
+            return $('.bottom-arrow a').click();
+          }
+        }
+      });
     }
     if (window.location.hash.search('thanks') !== -1) {
       $.magnificPopup.open({

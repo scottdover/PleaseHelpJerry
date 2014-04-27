@@ -1775,6 +1775,9 @@ a {
     background: #ecf0f1;
     border: 1px solid #d9dcde; }
 
+body, html {
+  -webkit-overflow-scrolling: touch; }
+
 p, a {
   font-size: 19px;
   font-weight: 200; }
@@ -1846,6 +1849,7 @@ p, a {
     background: url("/assets/img/down-arrow.png") no-repeat; }
 
 .content-wrapper {
+  margin-top: 1000px;
   z-index: 3;
   position: relative; }
   .content-wrapper .main-content {
@@ -2056,13 +2060,21 @@ form .form-controls {
   padding-right: 15px;
   float: left; }
 .split-pane .right {
-  width: 554px;
   margin-left: 276px; }
 
 .bottom-arrow a {
   color: white; }
 
+input[type='text'], textarea {
+  -webkit-appearance: none; }
+
 @media screen and (max-width: 480px) {
+  input[type='text'], textarea {
+    -webkit-appearance: none; }
+
+  .content-wrapper {
+    margin-top: 0; }
+
   .bottom-arrow {
     display: none; }
 

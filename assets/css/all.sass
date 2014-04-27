@@ -4,6 +4,10 @@
 @import "sass/magnific-popup"
 @import "sass/base"
 @import "sass/popup"
+
+body, html
+  -webkit-overflow-scrolling: touch
+
 p, a
   font-size: 19px
   font-weight: 200
@@ -75,6 +79,7 @@ p, a
     background: url('/assets/img/down-arrow.png') no-repeat
 
 .content-wrapper
+  margin-top: 1000px
   z-index: 3
   position: relative
   .main-content
@@ -267,14 +272,19 @@ form
     padding-right: 15px
     float: left
   .right
-    width: 554px
+    // width: 554px
     margin-left: 276px
 
 .bottom-arrow
   a
     color: white
-
+input[type='text'], textarea
+  -webkit-appearance: none
 @media screen and (max-width: 480px)
+  input[type='text'], textarea
+    -webkit-appearance: none
+  .content-wrapper
+    margin-top: 0
   .bottom-arrow
     display: none
   .page

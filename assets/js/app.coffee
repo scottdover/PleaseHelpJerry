@@ -86,6 +86,11 @@ App::init= ()->
 
   if $('.bottom-arrow').is(':visible')
     $('.content-wrapper').css('margin-top', $(window).height() + 'px')
+    $('.page').swipe(
+      swipe: (e, dir, dist, duration, fingerCount)->
+        if dir == 'up'
+          $('.bottom-arrow a').click()
+    )
 
   if window.location.hash.search('thanks') != -1
     $.magnificPopup.open(
@@ -99,6 +104,8 @@ App::init= ()->
     if window.location.hash != '#!/'
       ga('send', 'pageview', location.pathname + location.search  + location.hash)
       return
+
+
 
   @actions()
   this
