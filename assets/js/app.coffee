@@ -97,7 +97,7 @@ App::init= ()->
 
   $(window).bind 'hashchange', ()->
     if window.location.hash != '#!/'
-      ga('send', 'pageview')
+      ga('send', 'pageview', location.pathname + location.search  + location.hash)
       return
 
   @actions()

@@ -102,7 +102,7 @@
     }
     $(window).bind('hashchange', function() {
       if (window.location.hash !== '#!/') {
-        ga('send', 'pageview');
+        ga('send', 'pageview', location.pathname + location.search + location.hash);
       }
     });
     this.actions();
