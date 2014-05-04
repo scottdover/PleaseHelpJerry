@@ -47,7 +47,7 @@ title: PleaseHelpJerry
           </div><!-- /video-box -->
           <div class="video-box">
             <div class="content not-ready">
-              <em>Video coming soon...</em>
+              <em>Video coming May 4<sup>th</sup></em>
               <a href="#" class="yt-embed hidden hidden-1" data-rel="video-2">
                 <img src="/assets/img/yt-screen.jpg" alt="Youtube Screenshot" />
                 <i class="fa fa-play-circle-o"></i>
@@ -56,7 +56,7 @@ title: PleaseHelpJerry
           </div><!-- /video-box -->
           <div class="video-box omega">
             <div class="content not-ready">
-              <em>Video coming soon...</em>
+              <em>Video coming May 11<sup>th</sup></em>
               <a href="#" class="yt-embed hidden hidden-2" data-rel="video-3">
                 <img src="/assets/img/yt-screen.jpg" alt="Youtube Screenshot" />
                 <i class="fa fa-play-circle-o"></i>
@@ -102,7 +102,7 @@ title: PleaseHelpJerry
                 <a class="modal" href="{{ post.url }}">
                   + More
                 </a>
-                {{ post.title }}
+                {{ post.title }} <span class="category">{{ post.categories | first | replace:'-',' ' | replace:'ministries','' | replace:'ministry','' }}</span>
               </li>
             {% endfor %}
           </ul>

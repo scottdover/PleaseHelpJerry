@@ -2136,3 +2136,9 @@ input[type='text'], textarea {
       display: none; } }
 .video-1 {
   border: 0; }
+
+span.category {
+  color: #aaaaaa;
+  font-style: italic;
+  font-size: 14px;
+  padding-left: 5px; }
