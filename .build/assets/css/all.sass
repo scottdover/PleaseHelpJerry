@@ -1,0 +1,352 @@
+@import "fontawesome/font-awesome"
+@import "bourbon/bourbon"
+@import "sass/reset"
+@import "sass/magnific-popup"
+@import "sass/base"
+@import "sass/popup"
+
+body, html
+  -webkit-overflow-scrolling: touch
+
+p, a
+  font-size: 19px
+  font-weight: 200
+  i 
+    font-size: 16px
+.logo
+  line-height: 1
+  position: fixed
+  top: 50%
+  left: 50%
+  margin-left: -257px
+  margin-top: -200px
+  width: 515px
+  height: 400px
+  font-size: 96px
+  color: white
+  font-weight: 100
+  text-transform: uppercase
+  .line-1
+    span
+      padding-left: 42px
+      &:first-child
+        padding-left: 0
+  .line-2
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 180px
+    margin-left: -7px
+    margin-top: -10px
+  .line-3
+    font-size: 144px
+    margin-top: -10px
+    span
+      padding-left: 38px
+      &:first-child
+        padding-left: 0
+
+.page
+  z-index: 1
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  &.red
+    background: $red
+    color: white
+
+.bottom-arrow
+  position: absolute
+  bottom: 25px
+  margin-left: -54px
+  left: 50%
+  font-family: Georgia, Times, "Times New Roman", serif
+  font-style: italic
+  font-size: 20px
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  color: rgba(255, 255, 255, 0.6)
+  text-align: center
+  width: 108px
+  i
+    display: block
+    padding-bottom: 10px
+  span
+    display: block
+    width: 108px
+    height: 21px
+    background: url('/assets/img/down-arrow.png') no-repeat
+
+.content-wrapper
+  margin-top: 1000px
+  z-index: 3
+  position: relative
+  .main-content
+    background: white
+
+.page-wrapper
+  position: relative
+  .page
+    z-index: 1
+  .content-wrapper
+    z-index: 3
+
+.section
+  border-top: 1px solid lighten($med-gray, 10%)
+  &.odd
+    background: #fafafa
+  >.content
+    max-width: 880px
+    padding: 40px 25px
+    margin: 0 auto
+
+h2
+  font-size: 44px
+  margin-bottom: 10px
+
+p
+  font-weight: 200
+
+.cb
+  clear: both
+
+.video-box-wrapper
+  margin-left: -10px
+  margin-right: -10px
+  margin-top: 20px
+
+.video-box
+  width: 25%
+  padding: 5px
+  float: left
+
+  .content
+    em
+      display: none
+    &.not-ready
+      border: 2px dashed lighten($med-gray, 10%)
+      .hidden
+        display: none
+      em
+        font-style: italic
+        display: block
+        text-align: center
+        line-height: 147px
+        color: #888
+    background: #fafafa
+    position: relative
+    i
+      font-size: 46px
+      color: white
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-left: -23px
+      margin-top: -21px
+      opacity: 0.5
+      @include transition(opacity 0.5s $ease-out-quart)
+    img
+      max-width: 100%
+      display: block
+    a
+      display: block
+      opacity: 0.7
+      @include transition(opacity 0.3s $ease-out-quart)
+      &:hover
+        opacity: 1.0
+        @include transition(opacity 0.3s $ease-out-quart)
+      &:hover i
+        opacity: 1.0
+        @include transition(opacity 0.5s $ease-out-quart)
+
+.video-wrap
+  .mfp-content
+    width: 760px
+
+.vol-pos-wrap
+  .top-picker
+    select
+      display: none
+    margin-top: 25px
+    .line
+      border-top: 1px solid lighten($med-gray, 10%)
+      clear: both
+    a
+      font-size: 16px
+      display: block
+      text-align: center
+      width: 16%
+      float: left
+      white-space: nowrap
+      span
+        display: block
+        margin-bottom: -6px
+        margin-top: 6px
+      i
+        display: block
+        width: 12px
+        height: 12px
+        background: white
+        border: 1px solid $med-gray
+        border-radius: 12px
+        -webkit-border-radius: 12px
+        -moz-border-radius: 12px
+        margin: 0 auto
+        @include transition(all 0.5s $ease-out-quart)
+      color: darken($gray, 5%)
+      @include transition(all 0.5s $ease-out-quart)
+      &.active, &:hover
+        @include transition(all 0.5s $ease-out-quart)
+        color: $red
+        i
+          @include transition(all 0.5s $ease-out-quart)
+          background: $red
+          border-color: darken($red, 5%)
+
+.posts-wrapper
+  margin-top: 25px
+  .border
+    position: relative
+    z-index: 2
+    border-bottom: 1px solid #fafafa
+  .posts
+    position: relative
+    z-index: 1
+    margin-top: -1px
+
+.posts
+  li
+    font-size: 19px
+    padding: 6px
+    border-top: 1px solid #e6e6e6
+    cursor: pointer
+  .modal
+    float: right
+    font-size: 17px
+    border: 1px solid $gray
+    color: $gray
+    padding: 1px 5px
+    border-radius: 5px
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    @include transition(all 0.5s $ease-out-quart)
+    &:hover, &.active
+      @include transition(all 0.5s $ease-out-quart)
+      color: $red
+      border-color: $red
+
+form
+  input[type='text'], textarea
+    width: 100%
+    border: 2px solid lighten($med-gray, 10%)
+    padding: 5px
+  input[type='text'], textarea, input[type='submit']
+    font-size: 16px
+    font-weight: 100
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif
+  textarea
+    height: 190px
+  li
+    margin-top: 10px
+  .form-controls
+    text-align: right
+    input
+      cursor: pointer
+      background: none
+      border: 1px solid $gray
+      color: $gray
+      padding: 5px 10px
+      border-radius: 5px
+      -webkit-border-radius: 5px
+      -moz-border-radius: 5px
+      @include transition(all 0.5s $ease-out-quart)
+      &:hover
+        @include transition(all 0.5s $ease-out-quart)
+        color: $red
+        border-color: $red
+
+.split-pane
+  .left
+    width: 276px
+    padding-right: 15px
+    float: left
+  .right
+    // width: 554px
+    margin-left: 276px
+
+.bottom-arrow
+  a
+    color: white
+input[type='text'], textarea
+  -webkit-appearance: none
+@media screen and (max-width: 480px)
+  input[type='text'], textarea
+    -webkit-appearance: none
+  .content-wrapper
+    margin-top: 0
+  .bottom-arrow
+    display: none
+  .page
+    position: relative
+    height: 270px
+  h2
+    line-height: 1.1
+  .logo
+    padding-top: 38px
+    position: relative
+    top: auto
+    left: auto
+    margin: 0 auto
+    width: 280px
+    height: auto
+    font-size: 40px
+    .line-1
+      span
+        padding-left: 29px
+    .line-2
+      font-size: 100px
+    .line-3
+      font-size: 80px
+      margin-top: -10px
+      span
+        padding-left: 20px
+  .video-box-wrapper
+    margin-left: 0
+    margin-right: 0
+    margin-top: 20px
+  .video-box
+    width: 100%
+  .vol-pos-wrap .top-picker
+    select
+      display: block
+      width: 100%
+    a
+      visibility: hidden
+      height: 1px
+    .line
+      display: none
+  .split-pane
+    .left, .right
+      width: 100%
+      float: none
+      padding-right: 0
+      margin-left: 0
+    .left
+      img
+        display: none
+      padding: 10px
+      background: #ecf0f1
+      border: 1px solid lighten($med-gray, 10%)
+      margin-top: 10px
+      margin-bottom: 15px
+
+
+.video-1
+  border: 0
+
+span.category
+  color: #aaa
+  font-style: italic
+  font-size: 14px
+  padding-left: 5px
